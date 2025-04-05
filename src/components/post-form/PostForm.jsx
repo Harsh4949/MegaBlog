@@ -35,18 +35,23 @@ export default function PostForm({ post }) {
                 navigate(`/post/${dbPost.$id}`);
             }
         } else {
+            if (!userData) {
+                console.error("User data not available.");
+                return;
+            }
+        
             const file = await appwriteService.uploadFile(data.image[0]);
-
+        
             if (file) {
                 const fileId = file.$id;
                 data.featuredImage = fileId;
                 const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id });
-
+        
                 if (dbPost) {
                     navigate(`/post/${dbPost.$id}`);
                 }
             }
-        }
+        }        
     };
 
     const slugTransform = useCallback((value) => {
