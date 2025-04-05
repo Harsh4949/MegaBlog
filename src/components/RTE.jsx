@@ -18,18 +18,10 @@ export default function RTE({ name, control, label, defaultValue = "" }) {
               height: 500,
               menubar: true,
               plugins: [
-                // Add all desired plugins here
-                'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'image', 'link', 'lists', 'media',
-                'searchreplace', 'table', 'visualblocks', 'wordcount', 'checklist', 'mediaembed', 'casechange',
-                'formatpainter', 'pageembed', 'a11ychecker', 'tinymcespellchecker', 'permanentpen', 'powerpaste',
-                'advtable', 'advcode', 'editimage', 'advtemplate', 'ai', 'mentions', 'tinycomments',
-                'tableofcontents', 'footnotes', 'mergetags', 'autocorrect', 'typography', 'inlinecss', 'markdown',
-                'importword', 'exportword', 'exportpdf'
+               'link', 'lists', 'image', 'media', 'table', 'code', 'wordcount'
               ],
               toolbar:
-                'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | ' +
-                'addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist ' +
-                'indent outdent | emoticons charmap | removeformat',
+                'undo redo | bold italic underline | link image media | numlist bullist | code | table | removeformat',
               tinycomments_mode: 'embedded',
               tinycomments_author: 'Author name',
               mergetags_list: [
