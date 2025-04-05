@@ -103,12 +103,12 @@ export default function PostForm({ post }) {
                     accept="image/png, image/jpg, image/jpeg, image/gif"
                     {...register("image", { required: !post })}
                 />
-                {post && (
+                {post && post.featuredImage && (
                     <div className="w-full mb-4">
                         <img
-                            src={appwriteService.getFilePreview(post.featuredImage)}
-                            alt={post.title}
-                            className="rounded-lg"
+                        src={appwriteService.getFilePreview(post.featuredImage)?.href}
+                        alt={post.title}
+                        className="rounded-lg"
                         />
                     </div>
                 )}
